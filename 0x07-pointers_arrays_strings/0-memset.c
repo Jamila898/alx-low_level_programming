@@ -7,14 +7,14 @@
  *
  * Return: changed array with new value for n bytes
  */
-char *_memset(char *s, char b, unsigned int n)
-{
-	int i = 0;
+char *_memset(char *s, char b, unsigned int n) {
+    char *start = s;
 
-	for (; n > 0; i++)
-	{
-		s[i] = b;
-		n--;
-	}
-	return (s);
+    while (n > 0) {
+        *s = b;
+        s++;
+        n--;
+    }
+
+    return start;
 }
